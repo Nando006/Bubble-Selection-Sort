@@ -63,11 +63,14 @@ void selectionSort(int arr[], int n, int *mov)
         min_idx = j;
       }
     }
-    temp = arr[min_idx];
-    arr[min_idx] = arr[i];
-    arr[i] = temp;
 
-    (*mov)++;
+    if (min_idx != i)
+    {
+      temp = arr[min_idx];
+      arr[min_idx] = arr[i];
+      arr[i] = temp;
+      (*mov)++;
+    }
   }
 }
 
